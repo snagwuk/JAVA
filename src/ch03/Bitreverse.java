@@ -5,7 +5,7 @@ public class Bitreverse {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int v1 = 10;
+		int v1 =  10;
 		int v2 = ~v1;
 		int v3 = ~v1 + 1;
 		System.out.println(toBinaryString(v1) + " (½ÊÁø¼ö:    )"+ v1 + ")" );
