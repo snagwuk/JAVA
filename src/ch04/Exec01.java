@@ -9,7 +9,7 @@ public class Exec01
     {
         // TODO Auto-generated method stub
         // 문자를 입력받아서 소문자인 경우 대문자로 변경하여 출력하기
-        // 영문자 아닌 경우 소문자 아님 출력하기
+        // 영문자 아닌 경우 소문자 아님 출력하기!!!!
         
        
         
