@@ -7,12 +7,13 @@ public class IfLoopExam03
     {
         // TODO Auto-generated method stub
         int num = ((int)(Math.random()*11)+5)*2+1;
-        int n = num;
+        int n = 7;
 
-        int cnt = 1;
-        for(int i = n; i>1;i=i-2)
+        int cnt = 0;
+        for(int i = n; i>0;i=i-2)
             cnt += 2 * (i);
-
+        cnt-=1;
+        System.out.println(cnt);
         int p1 = 0;
         int p2 = n - 1;
 
@@ -30,10 +31,6 @@ public class IfLoopExam03
             p2 -=1;
             System.out.println();
         }
-
-
-
-
     }
 
 }
