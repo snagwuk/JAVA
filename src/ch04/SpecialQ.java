@@ -4,75 +4,80 @@ import java.util.Scanner;
 
 public class SpecialQ
 {
-
-    static int MAX = 5;
-    static int arrRotation = 0;
-    static int[] random = new int[MAX];
-    static int[][] arr = new int[MAX][MAX];
-    public static void TurnArr(int a)
+    @SuppressWarnings("resource")
+    public static void main(String[] args)
     {
+        // TODO Auto-generated method stub
 
+        final int MAX = 10;
+        final int CHAR = 2;
+        int[] random = new int[MAX];
+        int[][] arr = new int[MAX][MAX];
 
-    }
+        boolean run = true;
+        Scanner s1 = new Scanner(System.in);
 
-    public static void InitArr() // arr 배열 0으로 초기화
-    {
-        for (int i = 0; i < MAX; i++)
+        for (int i = 0; i < MAX; i++) // arr배열 0으로 초기화
         {
             for (int j = 0; j < MAX; j++)
             {
                 arr[i][j] = 0;
             }
         }
-    }
 
-
-    @SuppressWarnings("resource")
-    public static void main(String[] args)
-    {
-        // TODO Auto-generated method stub
-
-
-        boolean run = true;
-        Scanner s1 = new Scanner(System.in);
-
-        InitArr(); // arr배열 0으로 초기화
-
-        for (int i = 0; i < MAX; i++)            // 랜덤값 random배열에 저장
+        for (int i = 0; i < MAX; i++) // 각각의 랜덤값들을 random배열에 저장
         {
             random[i] = (int) ((Math.random() * MAX) + 1);
-            System.out.print(random[i] + ",");
+            if (i == MAX - 1)
+                System.out.println(random[i]);
+            else
+                System.out.print(random[i] + ",");
         }
 
-        for (int j = 0; j < MAX; j++)           // random배열에 저장된 랜덤값으로 초기 그래프 생성을 위한 2차배열
+        for (int i = 0; i <= 2 * MAX + 1; i++) // 구분선
+        {
+            System.out.print("─");
+        }
+        System.out.println();
+
+        for (int j = 0; j < MAX; j++) // random배열에 저장된 랜덤값으로 초기 arr배열 생성
         {
             int temp = random[j];
             for (int i = MAX - 1; i >= 0; i--)
             {
-
                 if (temp != 0)
                 {
-                    arr[i][j] = 2;
+                    arr[i][j] = CHAR;
                     temp--;
                 }
-
             }
         }
 
-
         while (run)
         {
-
-            System.out.println();
-            for (int i = 0; i < MAX; i++) // arr 출력 for문
+            /// arr 2차배열 테두리포함한 출력 for문들
+            System.out.print("┌");
+            for (int i = 0; i <= 2 * MAX; i++)
             {
+                System.out.print("─");
+            }
+            System.out.println("┐");
+
+            for (int i = 0; i < MAX; i++)
+            {
+                System.out.print("│ ");
                 for (int j = 0; j < MAX; j++)
                 {
                     System.out.print(arr[i][j] + " ");
-
                 }
-                System.out.println();
+                System.out.println("│");
             }
+            System.out.print("└");
+            for (int i = 0; i <= 2 * MAX; i++)
+            {
+                System.out.print("─");
+            }
+            System.out.println("┘");
 
             System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
             System.out.println("1.시계방향 회전 | 2.반시계방향 회전 | 3.밑으로 정렬 | 4.종료");
@@ -82,156 +87,83 @@ public class SpecialQ
 
             switch (num)
             {
-                case 1:
+                case 1: // 시계방향 회전
 
-                    for (int i = 0; i < MAX; i++) // arr 배열 0으로 초기화 + 랜덤값 random배열에 저장
+                    int[][] temp = new int[MAX][MAX];
+
+                    for (int i = 0; i < MAX; i++)
                     {
                         for (int j = 0; j < MAX; j++)
                         {
-                            arr[i][j] = 0;
+                            temp[j][MAX - 1 - i] = arr[i][j];
+
                         }
                     }
-                    System.out.println("초기화완료");
-
-
-                    for (int j = 0; j < MAX; j++)
-                    {
-                        int temp = random[j];
-                        for (int i = 0; i < MAX; i++)
-                        {
-
-                            if (temp != 0)
-                            {
-                                arr[j][i] = 2;
-                                temp--;
-                            }
-                        }
-                    }
-                    System.out.println("회전완료");
-
+                    arr = temp;
                     break;
-                case 2:
+                case 2: // 반시계방향 회전
 
-                    for (int i = 0; i < MAX; i++) // arr 배열 0으로 초기화 + 랜덤값 random배열에 저장
+                    int[][] temp2 = new int[MAX][MAX];
+
+                    for (int i = 0; i < MAX; i++)
                     {
                         for (int j = 0; j < MAX; j++)
                         {
-                            arr[i][j] = 0;
+                            temp2[MAX - j - 1][i] = arr[i][j];
+
                         }
                     }
-                    System.out.println("초기화완료");
-
-                    int randomTemp = 0;
-                    for (int j = MAX-1; j >= 0; j--)
-                    {
-                        int temp = random[randomTemp];
-                        randomTemp++;
-                        for (int i = MAX-1; i >= 0; i--)
-                        {
-
-                            if (temp != 0)
-                            {
-                                arr[j][i] = 2;
-                                temp--;
-                            }
-                        }
-                    }
-                    System.out.println("회전완료");
-
+                    arr = temp2;
                     break;
-                case 3:
-
+                case 3: // 밑으로 정렬
 
                     int[] tempCnt = new int[MAX];
                     int cnt;
 
-                    for (int i = 0; i < MAX; i++)
+                    for (int i = 0; i < MAX; i++) // 각 열의 갯수들을 구하여 tempCnt배열에 저장
                     {
                         cnt = 0;
                         for (int j = 0; j < MAX; j++)
                         {
-                            if (arr[j][i] == 2)
-                                cnt++;
+                            if (arr[j][i] == CHAR) cnt++;
                         }
                         tempCnt[i] = cnt;
                     }
 
-                    for (int i = 0; i < MAX; i++) // arr 배열 0으로 초기화 + 랜덤값 random배열에 저장
+                    /*for (int i = 0; i < MAX; i++)
                     {
                         System.out.print(tempCnt[i] + ",");
                     }
-                    System.out.println();
+                    System.out.println();*/
 
-                    for (int i = 0; i < MAX; i++) // arr 배열 0으로 초기화 + 랜덤값 random배열에 저장
+                    for (int i = 0; i < MAX; i++) // arr 배열 초기화
                     {
                         for (int j = 0; j < MAX; j++)
                         {
                             arr[i][j] = 0;
                         }
                     }
-                    System.out.println("초기화완료");
 
-                    for (int j = 0; j < MAX; j++)
+                    for (int j = 0; j < MAX; j++) // 각 열의 갯수들을 저장한 tempCnt배열
+                                                  // 이용하여 정렬된 arr2차배열 생성
                     {
-                        int temp = tempCnt[j];
+                        int temp3 = tempCnt[j];
                         for (int i = MAX - 1; i >= 0; i--)
                         {
-
-                            if (temp != 0)
+                            if (temp3 != 0)
                             {
-                                arr[i][j] = 2;
-                                temp--;
+                                arr[i][j] = CHAR;
+                                temp3--;
                             }
-
                         }
                     }
-
-
                     break;
                 case 4:
                     run = false;
                     System.out.println("프로그램 종료");
                     break;
-                case 5:         //////////////////////////////나중에 1,2,5 하나로 합치기
-
-                    for (int i = 0; i < MAX; i++) // arr 배열 0으로 초기화 + 랜덤값 random배열에 저장
-                    {
-                        for (int j = 0; j < MAX; j++)
-                        {
-                            arr[i][j] = 0;
-                        }
-                    }
-                    System.out.println("초기화완료");
-
-                    int randomTemp2 = 0;
-                    for (int j = MAX-1; j >= 0; j--)
-                    {
-                        int temp = random[randomTemp2];
-                        randomTemp2++;
-                        for (int i = 0; i < MAX; i++)
-                        {
-
-                            if (temp != 0)
-                            {
-                                arr[i][j] = 2;
-                                temp--;
-                            }
-                        }
-                    }
-                    System.out.println("회전완료");
-                    break;
             }
-
         }
-
-        System.out.println();
-        /*
-         * System.out.println("┌────────────────────┐"); for(int i =0; i<MAX;
-         * i++) { System.out.print("│"); for(int j = 0; j < MAX; j++) {
-         * //System.out.print("　★"); } System.out.println("│"); }
-         * System.out.println("└────────────────────┘");
-         */
-
     }
 
 }
