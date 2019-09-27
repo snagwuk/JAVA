@@ -16,6 +16,7 @@ public class ArrayEx6
         int index = 0;
 
         int binary[] = new int[32];
+
         while(divnum != 0)
         {
             binary[index++] = divnum %2;
