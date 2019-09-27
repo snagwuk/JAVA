@@ -2,7 +2,7 @@ package ch05;
 
 import java.util.Scanner;
 
-public class ArrayEx7
+public class ArrayEx7 ///CafeArray01
 {
 
     @SuppressWarnings("resource")

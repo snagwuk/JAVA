@@ -1,6 +1,6 @@
 package ch05;
 
-public class ArratEx12
+public class ArrayEx12
 {
 
     public static void main(String[] args)
