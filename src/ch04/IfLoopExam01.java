@@ -28,7 +28,7 @@ public class IfLoopExam01
                 }
             }
         }
-        if (!chk)
+        if (chk == false)
             System.out.println("정답없음");
 
 
