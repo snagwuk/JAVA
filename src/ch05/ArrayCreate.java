@@ -19,7 +19,6 @@ public class ArrayCreate
             {
                 origin = Integer.toString((int)((Math.random() * 10)))  + origin;
             }
-                 //i=1,2,3
             else
             {
                while(flag)
@@ -45,7 +44,6 @@ public class ArrayCreate
                flag = true;
             }
         }
-
         System.out.println( origin);
         int j = 0;
 
@@ -57,7 +55,6 @@ public class ArrayCreate
 
 
         }
-
         for (int i = 0; i < 1000; i++)
         {
             int f = (int) (Math.random() * 9);
@@ -67,7 +64,6 @@ public class ArrayCreate
             arr[f] = arr[t];
             arr[t] = tmp;
         }
-
         for(char x : arr)
             System.out.print(x + ",");
 
