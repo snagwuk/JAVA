@@ -6,18 +6,52 @@ public class Ladder
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        final int ENTRY = 5;
+        String[] start = {"A","B","C","D","E","F","G"};
+        String[] end = new String[start.length];
+        final int ENTRY = start.length;
         final int ROW = 7 +2 ;
         final int COL = ENTRY*2+1;      //11
 
-        String[] start = {"A","B","C","D","E"};
-        String[] end = new String[start.length];
+        int[][] ladder = new int[ROW][COL];
+
+        for (int i = 0; i < ROW; i++)
+        {
+            for (int j = 0; j < COL; j++)
+            {
+                if(j%2 == 1)
+                    ladder[i][j] = 1;
+                else
+                    ladder[i][j] = 0;
+            }
+        }
+
+        for (int i = 1; i < ROW-1; i++)
+        {
+            for (int j = 2; j < COL-1; j=j+2)
+            {
+                if(ladder[i][j-2] != 1 && ladder[i][j-1] != 8)   // 0이면 랜덤값 생성
+                {
+                    ladder[i][j] = (int)(Math.random()*2);
+                    if(ladder[i][j] == 1)
+                        ladder[i][j+2] = 8;
+                }
+            }
+        }
+    /*    for (int i = 0; i < ROW; i++)
+        {
+            for (int j = 0; j < COL; j++)
+            {
+                System.out.printf("%2s ",ladder[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println();*/
 
 
-        //int[][] ladder = new int[ENTRY*2+1][LENGTH];
 
         //사다리 랜덤 생성 부분
-        int[][] ladder = {
+        /*int[][] ladder = {
                 {0,1,0,1,0,1,0,1,0,1,0},
                 {0,1,0,1,0,1,0,1,0,1,0},
                 {0,1,1,1,0,1,1,1,0,1,0},
@@ -27,17 +61,9 @@ public class Ladder
                 {0,1,1,1,0,1,1,1,0,1,0},
                 {0,1,0,1,0,1,0,1,1,1,0},
                 {0,1,0,1,0,1,0,1,0,1,0}
-        };              // [9][11]
+        };         */     // [9][11]
 
-        for (int i = 0; i < ROW; i++)
-        {
-            for (int j = 0; j < COL; j++)
-            {
 
-            }
-        }
-
-        /*
         for (int i = 1; i < COL; i++)
         {   if(i%2 == 0)
                 System.out.printf("%2s","  ");
@@ -60,7 +86,7 @@ public class Ladder
                 }
                 else if(ladder[i][j] == 1 && j%2==0)
                     System.out.printf("%2s","──");
-                else if(ladder[i][j] == 0 )
+                else if(ladder[i][j] == 0 || ladder[i][j] == 8 )
                     System.out.printf("%2s"," ");
             }
             System.out.println();
@@ -88,7 +114,7 @@ public class Ladder
                 System.out.printf("%2s","  ");
             else
                 System.out.printf("%2S",end[(i-1)/2]);
-        }*/
+        }
 
     }
 
