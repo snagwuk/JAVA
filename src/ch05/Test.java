@@ -1,14 +1,12 @@
 package ch05;
 
-import java.util.Scanner;
-
 public class Test
 {
 
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        System.out.print("입력 :");
+     /*   System.out.print("입력 :");
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         int n = num;
@@ -25,7 +23,12 @@ public class Test
         else
             result = false;
 
-        System.out.println(result);
+        System.out.println(result);*/
+
+
+        String[] s = new String[4];
+        System.out.println(s[0]);
+
 
 
 
