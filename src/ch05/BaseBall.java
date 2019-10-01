@@ -13,7 +13,7 @@ public class BaseBall
         final int SIZE = 4;
         String origin = "";
 
-        boolean flag = true;    // 랜덤값 생성을 정지시키는 boolean
+       /* boolean flag = true;    // 랜덤값 생성을 정지시키는 boolean
         boolean overlap; // 기존에 있는 숫자인지 확인하는 boolean
 
         for(int i = 0 ; i < SIZE; i++)
@@ -46,13 +46,30 @@ public class BaseBall
                }
                flag = true;
             }
+        }*/
+
+
+        int[] balls = new int[10];
+        for (int i = 0; i < balls.length; i++)
+            balls[i] = i;
+
+        for (int i = 0; i < 1000; i++)
+        {
+            int f = (int) (Math.random() * 10);
+            int t = (int) (Math.random() * 10);
+
+            int tmp = balls[f];
+            balls[f] = balls[t];
+            balls[t] = tmp;
         }
+
+        for (int i = 0; i < 4; i++)
+            origin += balls[i];
+
 
         //String origin = "7319";
         System.out.println("원본>>" + origin);
-
         Scanner sc = new Scanner(System.in);
-
         int strike = 0;
         int ball = 0;
 
@@ -72,7 +89,7 @@ public class BaseBall
                         ball++;
                 }
             }
-            System.out.println(strike + "스트라이크," + ball + "볼");
+            System.out.println(strike + "strike," + ball + "ball");
         }
         System.out.println("정답입니다.");
 
