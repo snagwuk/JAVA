@@ -6,11 +6,26 @@ public class Ladder
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
+
         String[] start = {"A","B","C","D","E","F","G"};
         String[] end = new String[start.length];
         final int ENTRY = start.length;
         final int ROW = 7 +2 ;
         final int COL = ENTRY*2+1;      //11
+
+        /*    지정된 사다리로 먼저 구현하기 위해 사용했던 부분
+
+        int[][] ladder = {
+                   {0,1,0,1,0,1,0,1,0,1,0},
+                   {0,1,0,1,0,1,0,1,0,1,0},
+                   {0,1,1,1,0,1,1,1,0,1,0},
+                   {0,1,0,1,1,1,0,1,0,1,0},
+                   {0,1,0,1,0,1,0,1,1,1,0},
+                   {0,1,0,1,1,1,0,1,0,1,0},
+                   {0,1,1,1,0,1,1,1,0,1,0},
+                   {0,1,0,1,0,1,0,1,1,1,0},
+                   {0,1,0,1,0,1,0,1,0,1,0}
+           };         */     // [9][11]
 
         int[][] ladder = new int[ROW][COL];
 
@@ -37,31 +52,7 @@ public class Ladder
                 }
             }
         }
-    /*    for (int i = 0; i < ROW; i++)
-        {
-            for (int j = 0; j < COL; j++)
-            {
-                System.out.printf("%2s ",ladder[i][j]);
-            }
-            System.out.println();
-        }
 
-        System.out.println();*/
-
-
-
-        //사다리 랜덤 생성 부분
-        /*int[][] ladder = {
-                {0,1,0,1,0,1,0,1,0,1,0},
-                {0,1,0,1,0,1,0,1,0,1,0},
-                {0,1,1,1,0,1,1,1,0,1,0},
-                {0,1,0,1,1,1,0,1,0,1,0},
-                {0,1,0,1,0,1,0,1,1,1,0},
-                {0,1,0,1,1,1,0,1,0,1,0},
-                {0,1,1,1,0,1,1,1,0,1,0},
-                {0,1,0,1,0,1,0,1,1,1,0},
-                {0,1,0,1,0,1,0,1,0,1,0}
-        };         */     // [9][11]
 
 
         for (int i = 1; i < COL; i++)

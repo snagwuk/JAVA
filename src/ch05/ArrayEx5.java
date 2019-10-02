@@ -7,6 +7,7 @@ public class ArrayEx5
     {
         // TODO Auto-generated method stub
         int[] balls = new int[45];
+
         for (int i = 0; i < balls.length; i++)
             balls[i] = i + 1;
 

@@ -18,17 +18,16 @@ public class SeatReservation
             for (int j = 0; j < 2 * LINE; j++)
             {
                 if (j < i || j > (2 * LINE) - 1 - i)
-                    sheet[i][j] = null; // 0 = 좌석이 아닌 곳
+                    sheet[i][j] = "■"; // 0 = 좌석이 아닌 곳
                 else
-                    sheet[i][j] = "□"; // 1 = 좌석인곳
+                    sheet[i][j] = "□"; // 1 = 빈좌석인곳
             }
         }
 
 
         Scanner sc = new Scanner(System.in);
         String input ="";
-        outer :while (!input.equals("99"))
-
+        while (!input.equals("99"))
         {
             System.out.printf("%2s  ", "좌석");
             for (int j = 0; j < 2 * LINE; j++)
@@ -39,18 +38,18 @@ public class SeatReservation
             {
                 System.out.printf("%c :", ('A' + i));
                 for (int j = 0; j < 2 * LINE; j++)
-                {
-                    if (sheet[i][j] == null)
-                        System.out.printf("%"+nameLength+"s", "■");
-                    else
-                        System.out.printf("%"+nameLength+"s", sheet[i][j]);
-                }
+                    System.out.printf("%"+nameLength+"s", sheet[i][j]);
                 System.out.println();
             }
 
             System.out.println("예약자명,라인명,위치번호,인원수(종료:99)");
             System.out.print(">>");
             input = sc.next();
+            if (input.equals("99"))
+            {
+                System.out.println("프로그램종료");
+                break;
+            }
             // String input = "상욱,C,4,3";
             //System.out.println(input);
 
@@ -59,41 +58,41 @@ public class SeatReservation
             int inputsIndex = 0;
             for (int i = 0; i < input.length(); i++)
             {
+                if(inputsIndex == 4)
+                    break;
                 if (input.charAt(i) == ',')
                 {
                     inputs[inputsIndex++] = tmp;
                     tmp = "";
                     continue;
                 }
-                tmp = tmp + input.charAt(i);
+                else
+                   tmp = tmp + input.charAt(i);
 
                 if (i == input.length() - 1)
-                    inputs[inputsIndex] = tmp;
+                    inputs[inputsIndex++] = tmp;
             }
-            if(inputsIndex != 3)
-            {   System.out.println("입력이 잘못 되었습니다. ex>>이름,A,3,4");
+
+
+            if(inputsIndex != 4)
+            {   System.out.println("입력이 잘못 되었습니다.(많은인수) ex>>이름,A,3,4" );
                 continue;
             }
             for(String x : inputs)
             {
-                if(x != null)
+                if(x == null)
                 {
+                    System.out.println("입력이 잘못 되었습니다. ex>>이름,A,3,4");
                     continue;
                 }
-                else
-                {
-                    System.out.println("입력이 잘못 되었습니다. ex>>이름,A,3,4\n");
-                    continue outer;
-                }
-
             }
 
-            nameLength = inputs[0].length() > 2 ? inputs[0].length() : 2;
             int lineIndex = inputs[1].charAt(0) - 'A';
-            if (lineIndex < 'A' || lineIndex > 'A'+LINE )
+
+            if (inputs[1].charAt(0) < 'A' || inputs[1].charAt(0) > 'A'+LINE-1 )
             {
-                System.out.println("좌석이 없는 곳입니다.");
-                break;
+                System.out.println("잘못된 라인 입력입니다.");
+                continue;
             }
             int sheetIndex = Integer.parseInt(inputs[2]);
             int peopelNum = Integer.parseInt(inputs[3]);
@@ -131,6 +130,8 @@ public class SeatReservation
             }
             else
                 System.out.println("이미 예약된 좌석 입니다.");
+
+            nameLength = inputs[0].length() > 2 ? inputs[0].length() : 2;
         }
 
     }

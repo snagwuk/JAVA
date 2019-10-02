@@ -9,6 +9,7 @@ public class Race
 
         String[] starter = {"mislav","stanko","mislav","ana"};
         String[] completion = {"stanko","mislav","ana"};
+        String chckFlag = "RETIRE";
 
         for(String x : completion)
         {
@@ -16,16 +17,19 @@ public class Race
             {
                 if(starter[i].equals(x))
                 {
-                    starter[i] = "retire";
+                    starter[i] = chckFlag;
                     break;
                 }
             }
         }
+
+        System.out.print("완주 못한 사람 = ");
         for(String y : starter)
         {
-            if(!y.equals("retire"))
-                System.out.println("완주 못한 사람 = " + y);
+            if(!y.equals(chckFlag))
+                System.out.print(y + " ");
         }
+        System.out.println();
 
     }
 

@@ -28,6 +28,7 @@ public class Test
 
         String[] s = new String[4];
         System.out.println(s[0]);
+        System.out.printf("%c\n",'A'+5);
 
 
 

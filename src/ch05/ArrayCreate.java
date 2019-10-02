@@ -6,19 +6,60 @@ public class ArrayCreate
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        final int SIZE = 5;
+
+        final int SIZE = 11;
+        int[] origin = {1,2,3,4,5,6,7,8,9};
+        int[] result = new int[SIZE];
+
+        for (int i = 0; i < 1000; i++)
+        {
+            int f = (int) (Math.random() * origin.length);
+            int t = (int) (Math.random() * origin.length);
+            int tmp = origin[f];
+            origin[f] = origin[t];
+            origin[t] = tmp;
+        }
+
+        for(int x : origin)
+            System.out.print(x + ",");
+        System.out.println();
+
+        int j = 0;
+
+        for (int i = 0; i < result.length; i++)
+        {
+            result[i] = origin[j];
+            if(i %2 == 1)
+                j++;
+        }
+
+        for(int x : result)
+            System.out.print(x + ",");
+        System.out.println();
+
+        for (int i = 0; i < 1000; i++)
+        {
+            int f = (int) (Math.random() * result.length);
+            int t = (int) (Math.random() * result.length);
+            int tmp = result[f];
+            result[f] = result[t];
+            result[t] = tmp;
+        }
+
+        for(int x : result)
+            System.out.print(x + ",");
+        System.out.println();
+
+/*
+
         char[] arr = new char[9];
         String origin = "";
-
         boolean flag = true;    // 랜덤값 생성을 정지시키는 boolean
         boolean overlap; // 기존에 있는 숫자인지 확인하는 boolean
-
         for(int i = 0 ; i < SIZE; i++)
         {
             if (i == 0)
-            {
                 origin = Integer.toString((int)((Math.random() * 10)))  + origin;
-            }
             else
             {
                while(flag)
@@ -38,13 +79,14 @@ public class ArrayCreate
                    {
                        flag = false;
                        origin = origin + tmp;
-                       //
                    }
                }
                flag = true;
             }
         }
-        System.out.println( origin);
+
+
+        System.out.println(origin);
         int j = 0;
 
         for (int i = 0; i < arr.length; i++)
@@ -66,6 +108,7 @@ public class ArrayCreate
         }
         for(char x : arr)
             System.out.print(x + ",");
+*/
 
     }
 

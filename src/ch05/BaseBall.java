@@ -11,7 +11,26 @@ public class BaseBall
         // TODO Auto-generated method stub
 
         final int SIZE = 4;
-        String origin = "";
+        String result = "";
+
+        int[] origin = new int[10];
+        for (int i = 0; i < origin.length; i++)
+            origin[i] = i;
+
+        for (int i = 0; i < 1000; i++)
+        {
+            int f = (int) (Math.random() * origin.length);
+            int t = (int) (Math.random() * origin.length);
+            int tmp = origin[f];
+            origin[f] = origin[t];
+            origin[t] = tmp;
+        }
+
+        for (int i = 0; i < 4; i++)
+            result += origin[i];
+
+
+
 
        /* boolean flag = true;    // 랜덤값 생성을 정지시키는 boolean
         boolean overlap; // 기존에 있는 숫자인지 확인하는 boolean
@@ -49,26 +68,7 @@ public class BaseBall
         }*/
 
 
-        int[] balls = new int[10];
-        for (int i = 0; i < balls.length; i++)
-            balls[i] = i;
-
-        for (int i = 0; i < 1000; i++)
-        {
-            int f = (int) (Math.random() * 10);
-            int t = (int) (Math.random() * 10);
-
-            int tmp = balls[f];
-            balls[f] = balls[t];
-            balls[t] = tmp;
-        }
-
-        for (int i = 0; i < 4; i++)
-            origin += balls[i];
-
-
-        //String origin = "7319";
-        System.out.println("원본>>" + origin);
+        System.out.println("원본>>" + result);
         Scanner sc = new Scanner(System.in);
         int strike = 0;
         int ball = 0;
@@ -81,15 +81,15 @@ public class BaseBall
             ball = 0;
             for (int i = 0; i < SIZE; i++)
             {
-                if (origin.charAt(i) == num.charAt(i))
+                if (result.charAt(i) == num.charAt(i))
                     strike++;
                 for (int j = 0; j < SIZE; j++)
                 {
-                    if (i != j && origin.charAt(i) == num.charAt(j))
+                    if (i != j && result.charAt(i) == num.charAt(j))
                         ball++;
                 }
             }
-            System.out.println(strike + "strike," + ball + "ball");
+            System.out.println(strike + "strike, " + ball + "ball");
         }
         System.out.println("정답입니다.");
 
