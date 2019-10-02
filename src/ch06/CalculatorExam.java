@@ -18,6 +18,8 @@ public class CalculatorExam
 
         myCal.powerOff();
 
+        myCal.execute();
+
     }
 
 }
