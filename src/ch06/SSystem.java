@@ -9,9 +9,8 @@ public class SSystem
         // TODO Auto-generated method stub
 
         SSystem.out.println().num = 88;
-
+        System.out.println(SSystem.out.println().num);
     }
-
 }
 
 class printStream1

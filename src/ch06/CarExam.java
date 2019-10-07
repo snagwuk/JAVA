@@ -33,7 +33,21 @@ public class CarExam
         System.out.println("car4.color : " + car4.color);
         System.out.println("car4.maxSpeed : " + car4.maxSpeed);
 
+        System.out.println("天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
+        Car myCar2 = new Car();
+        myCar2.keyTurnOn();
+        myCar2.run();
+        int speed = myCar2.getSpeed();
+        System.out.println("⑷營樓紫 : " + speed + "km/h");
+        System.out.println("天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天天");
 
+        Car car11 = new Car("ん腦膠");
+        Car car12 = new Car("漸隴");
+
+        car11.run();
+        System.out.println(car11.speed + ":" + car12.speed);
+        car12.run();
+        System.out.println(car11.speed + ":" + car12.speed);
 
     }
 

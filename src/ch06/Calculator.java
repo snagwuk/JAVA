@@ -2,6 +2,15 @@ package ch06;
 
 public class Calculator
 {
+    static double pi = 3.14159;
+    static int plusS(int x, int y)
+    {
+        return x +y;
+    }
+    static int minus(int x, int y)
+    {
+        return x - y;
+    }
     void powerOn()
     {
         System.out.println("전원을 켭니다.");
@@ -28,5 +37,13 @@ public class Calculator
     void powerOff()
     {
         System.out.println("전원을 끕니다.");
+    }
+    double areaRectangle(double x)
+    {
+        return x*x;
+    }
+    double areaRectangle(double x,double y)
+    {
+        return x*y;
     }
 }
