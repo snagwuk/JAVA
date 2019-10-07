@@ -1,7 +1,41 @@
 package ch06;
 
+import hankook.SnowTire;
+import hydai.Engine;
+import kumho.BigWidthTire;
+
 public class Car
 {
+
+    private int speed2;
+    private boolean stop;
+
+
+    public int getSpeed2()
+    {
+        return speed2;
+    }
+    public void setSpeed2(int speed2)
+    {
+        this.speed2 = speed2;
+    }
+    public boolean isStop()
+    {
+        return stop;
+    }
+    public void setStop(boolean stop)
+    {
+        this.stop = stop;
+    }
+
+    SnowTire st = new SnowTire();
+    BigWidthTire bwt = new BigWidthTire();
+    Engine eg = new Engine();
+
+    hankook.SnowTire tire3 = new hankook.SnowTire();
+    kumho.BigWidthTire tire4 = new kumho.BigWidthTire();
+
+
     String company = "현대자동차";
     String color = "블랙";
     String model = "그랜져";

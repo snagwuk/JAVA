@@ -5,6 +5,8 @@ public class TvExam
 
     public static void main(String[] args)
     {
+
+        String x = "d";
         // TODO Auto-generated method stub
         Tv t;
         t = new Tv();
