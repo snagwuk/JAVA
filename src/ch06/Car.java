@@ -66,9 +66,17 @@ public class Car
     Car(){ }
     Car(String model) { this(model,null,0);}
     Car(String model, String color) { this(model,color,0);}
-    Car(String model, String color,int maxSpeed) { this.model = model; this.color = color; this.maxSpeed = maxSpeed;}
+    //Car(String model, String color,int maxSpeed) { this.model = model; this.color = color; this.maxSpeed = maxSpeed;}
     Car(String model, int maxSpeed) { this.model = model; this.maxSpeed = maxSpeed;}
 
+    String gearType;
+    int door;
+    Car(String c, String g, int d)
+    {
+        color = c;
+        gearType = g;
+        door = d;
+    }
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub

@@ -49,6 +49,16 @@ public class CarExam
         car12.run();
         System.out.println(car11.speed + ":" + car12.speed);
 
+        System.out.println("�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�");
+
+        Car c1 = new Car();
+        c1.color = "white";
+        c1.gearType = "auto";
+        c1.door  = 4;
+        Car c2 = new Car("white","auto",4);
+        System.out.println("c1 = " +  c1.color +  c1.gearType +  c1.door );
+        System.out.println("c2 = " +  c2.color +  c2.gearType +  c2.door );
+
     }
 
 }
