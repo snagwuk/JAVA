@@ -1,5 +1,9 @@
 package ch05;
 
+class Tt
+{
+    static int x = 10;
+}
 public class Test
 {
 
@@ -25,8 +29,15 @@ public class Test
 
         System.out.println(result);*/
 
+        System.out.println(Tt.x);
+        Tt.x = 20;
+        String x="asd";
+        x.length();
+        x.charAt(0);
+        System.out.println(Tt.x);
 
         String[] s = new String[4];
+        //s[1].equals(anObject)
         System.out.println(s[0]);
         System.out.printf("%c\n",'A'+5);
 
