@@ -1,9 +1,5 @@
 package ch06;
 
-import hankook.SnowTire;
-import hydai.Engine;
-import kumho.BigWidthTire;
-
 public class Car
 {
 
@@ -28,13 +24,13 @@ public class Car
         this.stop = stop;
     }
 
-    SnowTire st = new SnowTire();
+    /*SnowTire st = new SnowTire();
     BigWidthTire bwt = new BigWidthTire();
     Engine eg = new Engine();
 
-    hankook.SnowTire tire3 = new hankook.SnowTire();
+    ch06_hankook.SnowTire tire3 = new ch06_hankook.SnowTire();
     kumho.BigWidthTire tire4 = new kumho.BigWidthTire();
-
+*/
 
     String company = "현대자동차";
     String color = "블랙";
