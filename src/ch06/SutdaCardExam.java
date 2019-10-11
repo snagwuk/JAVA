@@ -18,9 +18,7 @@ class SutdaCard
     public String info()
     {
         // TODO Auto-generated method stub
-        if(!isKwang)
-            return number+"";
-        return number+"K";
+        return !isKwang ? number+"" : number+"K";
     }
 
 }

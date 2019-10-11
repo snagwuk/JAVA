@@ -25,50 +25,11 @@ public class BaseBall
             origin[f] = origin[t];
             origin[t] = tmp;
         }
-
         for (int i = 0; i < 4; i++)
             result += origin[i];
-
-
-
-
-       /* boolean flag = true;    // 랜덤값 생성을 정지시키는 boolean
-        boolean overlap; // 기존에 있는 숫자인지 확인하는 boolean
-
-        for(int i = 0 ; i < SIZE; i++)
-        {
-            if (i == 0)
-            {
-                origin = Integer.toString((int)((Math.random() * 10)))  + origin;
-            }
-            else         //i=1,2,3
-            {
-               while(flag)
-               {
-                   overlap = true;
-                   String tmp = Integer.toString((int)((Math.random() * 10)));
-
-                   for(int j = 0; j < origin.length() ; j++)
-                   {
-                       if(origin.charAt(j) == tmp.charAt(0))    //이미 존재하는 숫자이므로 for문 종료 후 다시 while문
-                       {
-                           overlap = false;
-                           break;
-                       }
-                   }
-                   if(overlap)                                  // 중복되지 않으므로 해당 숫자 String에 더함
-                   {
-                       flag = false;
-                       origin = origin + tmp;
-                       //System.out.println(i + ":" + origin);
-                   }
-               }
-               flag = true;
-            }
-        }*/
-
-
         System.out.println("원본>>" + result);
+
+
         Scanner sc = new Scanner(System.in);
         int strike = 0;
         int ball = 0;
