@@ -31,7 +31,7 @@ public class Test
 
         System.out.println(Tt.x);
         Tt.x = 20;
-        String x="asd";
+        String x="ABC";
         x.length();
         x.charAt(0);
         System.out.println(Tt.x);
@@ -40,6 +40,12 @@ public class Test
         //s[1].equals(anObject)
         System.out.println(s[0]);
         System.out.printf("%c\n",'A'+5);
+        
+        String y="ABC";
+        System.out.println(y.charAt(0));
+        System.out.println(y.charAt(1));
+        System.out.println(y.charAt(2));
+        
 
 
 

@@ -1,9 +1,10 @@
 package ch08;
 
-class Parent
+class Parentzz
 {
 
     public String filed1;
+    String name;
 
     public void method1()
     {
@@ -19,10 +20,11 @@ class Parent
     
 }
 
-class Child extends Vehicle
+class Child extends Parentzz
 {
 
     public String field2;
+    int studentNo;
 
     public void method2()
     {
@@ -30,6 +32,7 @@ class Child extends Vehicle
         
     }
     
+
 }
 
 public class ChildExam
@@ -38,7 +41,7 @@ public class ChildExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        Parent parent = new Parent();
+        Parentzz parent = new Parentzz();
         parent.filed1 ="data1";
         parent.method1();
         parent.method2();
