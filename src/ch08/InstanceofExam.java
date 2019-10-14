@@ -4,7 +4,7 @@ public class InstanceofExam
 {
    
     
-    public static void method1(Parent parent)
+    public static void method1(Parentz parent)
     {
         if(parent instanceof Child2)
         {
@@ -15,7 +15,7 @@ public class InstanceofExam
         else
             System.out.println("mthode1 - Child로 변환돠지않음 ");
     }
-    public static void method2(Parent parent)
+    public static void method2(Parentz parent)
     {
         @SuppressWarnings("unused")
         Child2 child = (Child2)parent;
@@ -24,10 +24,10 @@ public class InstanceofExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-       Parent parentA = new Child2();
+       Parentz parentA = new Child2();
        method1(parentA); method2(parentA);
        
-       Parent parentB = new Parent();
+       Parentz parentB = new Parentz();
        method1(parentB); method2(parentB);
        
         
@@ -35,11 +35,11 @@ public class InstanceofExam
   
     
 }
-class Child2 extends Parent
+class Child2 extends Parentz
 {
 }
 
-class Parent
+class Parentz
 {
     
 }

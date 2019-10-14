@@ -1,13 +1,12 @@
 package ch08;
 
-public class BindingTest        // 변수는 오버라이딩 되지 않는다.
+public class BindingTest2
 {
-    
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        parents p = new childs();
-        childs c = new childs();
+        parents2 p = new childs2();
+        childs2 c = new childs2();
         
         System.out.println("p.x = " + p.x);
         p.method();
@@ -21,7 +20,7 @@ public class BindingTest        // 변수는 오버라이딩 되지 않는다.
     }
     
 }
-class parents
+class parents2
 {
     int x = 100;        
     void method()
@@ -29,12 +28,15 @@ class parents
         System.out.println("parents 메소드");
     }
 }
-class childs extends parents
+class childs2 extends parents2
 {
     int x = 200;
     void method()
     {
-        System.out.println("childs 메소드");
+        System.out.println("x =" + x);
+        System.out.println("super.x =  " + super.x);
+        System.out.println("this.x =  " + this.x);
+        super.method();
     }
 }
 
