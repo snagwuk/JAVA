@@ -1,11 +1,10 @@
 package ch07;
 
-import javax.sound.midi.MidiDevice.Info;
 
-class Employee
+class EmployeeX
 {
     String type,name,dept;
-    Employee(String type, String name, String dept)
+    EmployeeX(String type, String name, String dept)
     {
         this.type = type;
         this.name = name;
@@ -19,10 +18,10 @@ class Employee
     }
     
 }
-class FormalEmployee extends Employee
+class FormalEmployeeX extends EmployeeX
 {
     String empno;
-    FormalEmployee(String empno, String name, String dept)
+    FormalEmployeeX(String empno, String name, String dept)
     {
         super("정규직", name, dept);
         this.empno = empno;
@@ -38,10 +37,10 @@ class FormalEmployee extends Employee
     
     
 }
-class InFormalEmployee extends Employee
+class InFormalEmployeeX extends EmployeeX
 {
     String expireDate;
-    InFormalEmployee(String name,  String expireDate)
+    InFormalEmployeeX(String name,  String expireDate)
     {
         super("비정규직", name, "");
         this.expireDate = expireDate;
@@ -61,8 +60,8 @@ public class EmployeeExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-       FormalEmployee fe = new FormalEmployee("0001", "호일동","개발부");
-       InFormalEmployee ife = new InFormalEmployee("홍길동", "20191231");
+        FormalEmployeeX fe = new FormalEmployeeX("0001", "호일동","개발부");
+       InFormalEmployeeX ife = new InFormalEmployeeX("홍길동", "20191231");
        System.out.println(fe+"\n"+ife);
         
     }

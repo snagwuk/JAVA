@@ -4,11 +4,18 @@ abstract class Employee
 {
     String type;
     String name;
+    public Employee(String type , String name)
+    {
+        // TODO Auto-generated constructor stub
+        this.type=type;
+        this.name=name;
+    }
     public Employee(String name)
     {
         // TODO Auto-generated constructor stub
         this.name=name;
     }
+    
     abstract int getPay();
 }
 class FormalEmployee extends Employee
