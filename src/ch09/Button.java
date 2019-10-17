@@ -7,12 +7,10 @@ public class Button
     {
         this.listener = listener;
     }
-    
     void touch()
     {
         listener.onClick();
     }
-
     static interface OnClickListener
     {
         void onClick();

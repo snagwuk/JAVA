@@ -10,14 +10,11 @@ public class ButtonExam
         btn.setOnClickListener(new CallListener());
         btn.touch();
         btn.setOnClickListener(new MessageListener());
-        btn.touch();
-        
-        
+        btn.touch();    
     }
 }
 class CallListener implements Button.OnClickListener
 {
-
     @Override
     public void onClick()
     {
