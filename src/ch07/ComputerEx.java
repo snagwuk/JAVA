@@ -8,7 +8,7 @@ class Calculator
         return 3.14159*r*r;
     }
 }
-class Computer extends Calculator
+class ComputerX extends Calculator
 {
     @Override
     double areaCircle(double r)
@@ -27,12 +27,12 @@ public class ComputerEx
         Calculator cl = new Calculator();
         System.out.println(cl.areaCircle(10));
 
-        Computer cm = new Computer();
+        ComputerX cm = new ComputerX();
         System.out.println(cm.areaCircle(10));
 
 
 
-        Calculator cl2 = new Computer();
+        Calculator cl2 = new ComputerX();
         System.out.println(cl2.areaCircle(10));
 
         //Computer cm2 = new Calculator();

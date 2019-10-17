@@ -81,7 +81,7 @@ class kumhoTire extends Tire
     }
 
 }
-class Car
+class CarX
 {
     Tire frontLeftTire = new Tire("앞왼쪽",6);
     Tire frontRightTire = new Tire("앞오른쪽",2);
@@ -119,7 +119,7 @@ public class TireExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        Car car = new Car();
+        CarX car = new CarX();
         for(int i = 0 ;i <=5;i++)
         {
             int problemLocation = car.reun();

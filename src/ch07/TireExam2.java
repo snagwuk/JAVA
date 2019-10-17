@@ -1,5 +1,5 @@
 package ch07;
-class Car2
+class Car2X
 {
     Tire[] tires =
         {
