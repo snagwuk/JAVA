@@ -1,18 +1,29 @@
 package Test;
 
-class Parent {}
-class Child extends Parent {}
 public class Test
 {
-    public static void main(String[] args)
-    {
-        Parent p = new Child(); //자동타입변환
-        Child c = (Child) p;    //강제타입변환(Casting)
-        
-        Parent p2 = new Parent(); 
-        Child c2 = (Child) p2;    //강제타입변환(Casting) 오류!!
-        
-        System.out.println(c+""+c2);
+          int original[];
+
+          static int[] shuffle(  int[] original){//카드의 순서를 섞는다.
+             for(int i=0;i<original.length;i++)
+             {
+                int r = (int)(Math.random()*original.length);
+                int temp = original[i];
+                original[i] = original[r];
+                original[r]=temp;
+                }
+             return original;
+             }
+          
+       
+
+       public static void main(String[] args) {
+          int[] original = {1,2,3,4,5,6,7,8,9};
+          System.out.println(java.util.Arrays.toString(original));
+          
+          int[]result = shuffle(original);
+          System.out.println(java.util.Arrays.toString(result));
+
+       }
+
     }
-    
-}
