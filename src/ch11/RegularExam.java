@@ -9,7 +9,7 @@ public class RegularExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        String[] data = {"bat","baby","bonus","Ca","count","cTT","data","disk","c","car","cA","","","",};
+        String[] data = {"bat","baby","bonus","Ca","count","cTT","date","disk","c","car","cA","c.","c0","c#","combat"};
         
         Pattern p = Pattern.compile("c[a-zA-z]*");
         for(String s : data)
