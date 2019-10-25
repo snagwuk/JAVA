@@ -15,7 +15,6 @@ public class ToStringExam
         System.out.println(Objects.toString(str2));
         System.out.println(Objects.toString(str2,"이름이없습니다."));
         System.out.println(Objects.toString(str1));
-        
     }
     
 }
