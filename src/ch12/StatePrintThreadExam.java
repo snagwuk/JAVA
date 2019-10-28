@@ -1,6 +1,29 @@
 package ch12;
 
-import java.awt.Toolkit;
+class TargetThread extends Thread
+{
+    @Override
+    public void run()
+    {
+        // TODO Auto-generated method stub
+        for (long i = 0; i < 1000000000; i++)
+        {
+        }
+        try
+        {
+            Thread.sleep(1500);
+        }
+        catch (Exception e)
+        {
+            // TODO: handle exception
+        }
+        for (long i = 0; i < 1000000000; i++)
+        {
+            
+        }
+        
+    }
+}
 
 class StatePrintThread extends Thread
 {
@@ -39,19 +62,8 @@ public class StatePrintThreadExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        for(int i = 0 ; i < 10; i ++)
-        {
-            tk.beep();
-            try
-            {
-                Thread.sleep(3000);
-            }
-            catch (Exception e)
-            {
-                // TODO: handle exception
-            }
-        }
+      StatePrintThread st = new StatePrintThread(new TargetThread());
+      st.start();
     }
     
 }
