@@ -30,25 +30,7 @@ public class CompletionServiceExam
                 }
             });
             System.out.println("처리 완료된 작업확인");
-            executorService.submit(new Runnable() {
-                
-                @Override
-                public void run()
-                {
-                    while(true)
-                    {
-                        try
-                        {
-                            
-                        }
-                        catch (Exception e)
-                        {
-                            // TODO: handle exception
-                        }
-                    }
-                    
-                }
-            })
+           
         }
     }
     

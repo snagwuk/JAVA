@@ -1,5 +1,7 @@
 package Test;
 
+import java.util.Vector;
+
 public class Test
 {
           int original[];
@@ -24,6 +26,14 @@ public class Test
           int[]result = shuffle(original);
           System.out.println(java.util.Arrays.toString(result));
 
+          
+          Vector<goods> jaego = new Vector<goods>();
+          
        }
 
     }
+
+class goods
+{
+    
+}
