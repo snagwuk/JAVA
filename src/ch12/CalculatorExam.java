@@ -1,14 +1,14 @@
 package ch12;
 
-class Calculator 
+class Calculator
 {
     private int memory;
-
+    
     public int getMemory()
     {
         return memory;
     }
-
+    
     public synchronized void setMemory(int memory)
     {
         this.memory = memory;
@@ -20,17 +20,21 @@ class Calculator
         {
             // TODO: handle exception
         }
-        System.out.println(Thread.currentThread().getName() + " : " + this.memory);
+        System.out.println(Thread.currentThread().getName() + " : "
+                + this.memory);
     }
 }
+
 class User1 extends Thread
 {
     private Calculator calculator;
+    
     void setCalculator(Calculator calculator)
     {
         this.setName("User1");
         this.calculator = calculator;
     }
+    
     @Override
     public void run()
     {
@@ -38,14 +42,17 @@ class User1 extends Thread
         calculator.setMemory(100);
     }
 }
+
 class User2 extends Thread
 {
     private Calculator calculator;
+    
     void setCalculator(Calculator calculator)
     {
         this.setName("User2");
         this.calculator = calculator;
     }
+    
     @Override
     public void run()
     {
@@ -69,8 +76,6 @@ public class CalculatorExam
         User2 user2 = new User2();
         user2.setCalculator(calculator);
         user2.start();
-       
-        
         
     }
     

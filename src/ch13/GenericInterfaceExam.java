@@ -4,14 +4,14 @@ interface product
 {
     
 }
-class Car implements product
+class CarZ implements product
 {
     public String toString()
     {
         return "Car []";
     }
 }
-class Tv implements product
+class TvZZ implements product
 {
     public String toString(){return "Tv []";}
 }
@@ -22,7 +22,7 @@ public class GenericInterfaceExam
     public static void main(String[] args)
     {
         // TODO Auto-generated method stub
-        compare(new Car(), new Tv());
+        compare(new CarZ(), new TvZZ());
         //compare(new Apple(), new Tv());
         
     }
