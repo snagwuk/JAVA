@@ -1,7 +1,5 @@
 package ch14;
 
-import java.util.function.UnaryOperator;
-
 public class IdentityExam
 {
     
