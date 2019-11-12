@@ -24,7 +24,7 @@ class TvZ
 {
     
 }
-class ChildProduct<T,M,C> extends Product<T,M>
+class ChildProduct<T,M,C> extends ProductZ<T,M>
 {
     private C company;
 
