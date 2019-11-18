@@ -107,7 +107,7 @@ public class machineRunningProduct
     public static Stream<Product> makeCon(int con, Stream<Product> st)
     {
         if (con!=0)
-        return st.filter(s -> s.getCon()==con);
+            return st.filter(s -> s.getCon()==con);
         else
             return st;
     }
